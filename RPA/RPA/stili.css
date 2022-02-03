@@ -1,0 +1,57 @@
+﻿body {
+    background-color:;
+}
+
+.forma-prijava {
+    font-size: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.prijava-naslov {
+    text-align: center;
+    background-color: darkgray;
+    padding: 20px;
+}
+
+.prijava-body {
+    background-color: lightgray;
+}
+
+.div-formaprijave {
+    align-content: center;
+}
+
+.navbar-reg {
+    z-index: -1;
+}
+
+
+.auto-style1 {
+    margin-left: 0px;
+    align-content: center;
+    margin-top: 0px;
+}
+
+.auto-style2 {
+    height: 367px;
+}
+
+
+.auto-style4 {
+  
+}
+
+.container{
+    text-align: center;
+}
+
+.text-danger{
+    text-align:center;
+    width:800px;
+    margin: 0 auto;
+}
+
+.o-app{
+    text-align:justify;
+}

@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Administrator.master.cs" Inherits="Administrator" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Domov</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="stili.css" />
+</head>
+<body>
+    <form runat="server">
+        <%-- Navbar - navigacija po straneh --%>
+        <div class="navbar navbar-inverse navbar-fixed-top" id="navbar">
+            <div class="contain" id="contain" style="padding-left: 100px; padding-right: 100px;">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">Spletna knjižnica</a>
+                </div>
+                <div id="topMenu" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" id="domov" href="~/">Domov</a></li>
+                        <li><a runat="server" id="oAplikaciji" href="~/About">O aplikaciji</a></li>
+                        <li><a runat="server" id="Kontakt" href="~/Contact">Kontakt</a></li>
+                        <li><a runat="server" id="upravljanjeKnjig" href="~/KnjigeNaVoljo">Upravljanje knjig</a></li>
+                        <li><a runat="server" id="upravljanjeRezervacij" href="~/UpravljanjeRezervacij">Upravljanje dogodkov</a></li>
+                        <li><a runat="server" id="upravljanjeUporabnikov" href="~/UpravljanjeUporabnikov">Upravljanje uporabnikov</a></li>
+                        <li><a runat="server" id="upravljanjeObvestil" href="~/UpravljanjeObvestil">Pregled obvestil</a></li>                       
+                    </ul>
+                    <asp:LoginView ID="LoginViewAdmin" runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" id="adminWelcome" visible="true">
+                                    <asp:Label ID="labelAdmin" runat="server" Text=""></asp:Label>
+                                </a></li>
+                                <li><a style="pointer-events:none !important; font-size: 17px;"><%#name %></a></li>
+                                <li><a runat="server" href="~/Odjava.aspx" id="odjavaBtn" visible="true" >Odjava</a></li>
+                                <li><a runat="server" href="~/Account/Register.aspx" id="registracijaBtn" visible="false"><span>Registracija</a></li>
+                                <li><a runat="server" href="~/Account/Login.aspx" id="prijavaBtn" visible="false"><span>Prijava</a></li>
+                                <li><a runat="server" href="~/AdminPrijava.aspx" id="adminPrijavBtn" visible="false"><span>Admin prijava</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                    </asp:LoginView>
+                </div>
+            </div>
+        </div>
+        <%-- Konec navbar --%>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr style="width:100%;"/>
+            <footer>
+                <div>
+                <p>&copy; <%: DateTime.Now.Year %> - Spletna knjižnica</p>
+                    </div>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
