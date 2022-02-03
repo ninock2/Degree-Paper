@@ -1,2 +1,2 @@
 # Degree-Paper
-ASP.NET application for my degree paper
+ASP.NET application for university degree paper (Information Technology - Computer Programming)
